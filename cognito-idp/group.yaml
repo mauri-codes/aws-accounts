@@ -1,0 +1,22 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: Cognito group and policy
+
+
+Resources:
+  AccountsCognitoGroup:
+    Type: AWS::IAM::Group
+    Properties:
+      GroupName: accounts-cognito-group
+      Policies:
+        - PolicyName: accounts-cognito-policy
+          PolicyDocument:
+            Statement:
+              - Effect: Allow
+                Action: cognito-idp:*
+                Resource: *
+              - Effect: Deny
+                Action: cognito-idp:*
+                Condition:
+                  StringEquals:
+                    "aws:PrincipalTag/user": "mau"
+                    

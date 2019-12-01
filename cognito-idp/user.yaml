@@ -1,0 +1,16 @@
+Resources:
+  AccountsCognitoUser:
+    Type : AWS::IAM::User
+    Properties:
+      UserName: {{UserName}}
+      Groups:
+        - !Ref AccountsCognitoGroup
+      LoginProfile:
+        Password: {{Password}}
+        PasswordResetRequired: false
+      Path: /guest/cognito/
+      Tags:
+        - Key: user
+        - Value: guest
+      
+      
