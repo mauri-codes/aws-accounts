@@ -1,4 +1,4 @@
-Resources:
+  
   AccountsCognitoUser:
     Type : AWS::IAM::User
     Properties:
@@ -12,5 +12,3 @@ Resources:
       Tags:
         - Key: user
         - Value: guest
-      
-      
