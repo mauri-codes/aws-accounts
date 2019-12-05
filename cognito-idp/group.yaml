@@ -1,7 +1,6 @@
 AWSTemplateFormatVersion: '2010-09-09'
 Description: Cognito group and policy
 
-
 Resources:
   AccountsCognitoGroup:
     Type: AWS::IAM::Group
@@ -13,10 +12,10 @@ Resources:
             Statement:
               - Effect: Allow
                 Action: cognito-idp:*
-                Resource: *
+                Resource: "*"
               - Effect: Deny
                 Action: cognito-idp:*
+                Resource: "*"
                 Condition:
                   StringEquals:
                     "aws:PrincipalTag/user": "mau"
-                    

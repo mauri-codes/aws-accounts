@@ -1,5 +1,5 @@
-  
-  AccountsCognitoUser:
+
+  AccountsCognitoUser{{index}}:
     Type : AWS::IAM::User
     Properties:
       UserName: {{UserName}}
@@ -11,4 +11,4 @@
       Path: /guest/cognito/
       Tags:
         - Key: user
-        - Value: guest
+          Value: guest
