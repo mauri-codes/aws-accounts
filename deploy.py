@@ -27,7 +27,7 @@ with open('users.txt', 'r') as user_list :
          file.write(user_cf)
 
 response = cf.create_stack(
-   StackName='cognito-idp-group',
+   StackName='cognito-idp-guest-group',
    TemplateBody=parse_template('temp/group.yaml'),
    Capabilities=[
       'CAPABILITY_NAMED_IAM'

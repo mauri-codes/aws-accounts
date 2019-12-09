@@ -11,4 +11,6 @@
       Path: /guest/cognito/
       Tags:
         - Key: user
+          Value: {{UserName}}
+        - Key: userType
           Value: guest

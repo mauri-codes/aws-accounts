@@ -11,11 +11,18 @@ Resources:
           PolicyDocument:
             Statement:
               - Effect: Allow
-                Action: cognito-idp:*
+                Action:
+                  - cognito-idp:List*
+                  - cognito-idp:Create*
                 Resource: "*"
-              - Effect: Deny
-                Action: cognito-idp:*
+              - Effect: Allow
+                Action:
+                  - cognito-idp:Describe*
+                  - cognito-idp:Get*
+                  - cognito-idp:Update*
+                  - cognito-idp:Delete*
+                  - cognito-idp:Add*
                 Resource: "*"
                 Condition:
                   StringEquals:
-                    "aws:PrincipalTag/user": "mau"
+                    "aws:ResourceTag/user": "${aws:PrincipalTag/user}"
