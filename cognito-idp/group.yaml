@@ -15,14 +15,3 @@ Resources:
                   - cognito-idp:List*
                   - cognito-idp:Create*
                 Resource: "*"
-              - Effect: Allow
-                Action:
-                  - cognito-idp:Describe*
-                  - cognito-idp:Get*
-                  - cognito-idp:Update*
-                  - cognito-idp:Delete*
-                  - cognito-idp:Add*
-                Resource: "*"
-                Condition:
-                  StringEquals:
-                    "aws:ResourceTag/user": "${aws:PrincipalTag/user}"

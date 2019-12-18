@@ -14,3 +14,19 @@
           Value: {{UserName}}
         - Key: userType
           Value: guest
+      Policies:
+        - PolicyName: {{UserName}}-guest-policy
+          PolicyDocument:
+            Statement:
+              - Effect: Allow
+                Action:
+                  - cognito-idp:Describe*
+                  - cognito-idp:Get*
+                  - cognito-idp:Update*
+                  - cognito-idp:Delete*
+                  - cognito-idp:Add*
+                Resource: "*"
+                Condition:
+                  StringEquals:
+                    "aws:ResourceTag/user": {{UserName}}
+
